@@ -1,8 +1,51 @@
-<h1>This is the Login page</h1>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8' />
+        <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <link rel='stylesheet' type='text/css' href='css/login.style.css' />
 
-<form action='/login' method='POST'>
-    <input name='user_id' type='text' placeholder='User ID' />
-    <input name='password' type='password' placeholder='Password' />
-    <input type='submit' placeholder='Login' />
+        <title>JDVNHS Login</title>
+    </head>
+    <body>
 
-</form>
+        <img class='wave' src='img/login/wave.png' />
+        <div class='container'>
+            <div class='img'>
+                <img src='img/login/logo school.png' />
+            </div>
+            <div class='login-content'>
+                <form action='/login' method='POST'>
+                    <img src='img/login/user.svg' />
+                    <h2 class='title'>Welcome</h2>
+                    <div class='input-div one'>
+                        <div class='i'>
+                            <i class='fas fa-user'></i>
+                        </div>
+                        <div class='div'>
+                            <h5>Username</h5>
+                            <input type='text' class='input' />
+                        </div>
+                    </div>
+                    <div class='input-div pass'>
+                        <div class='i'>
+                            <i class='fas fa-lock'></i>
+                        </div>
+                        <div class='div'>
+                            <h5>Password</h5>
+                            <input type='password' class='input' />
+                        </div>
+                    </div>
+                    <a href='#'>Forgot Password?</a>
+                    <a
+                        href='file:///C:/Users/Rolly%20Cedron/Desktop/DDS%20Diagrams/sidenav.html'
+                    >
+                        <input type='submit' class='btn' value='Login' />
+                    </a>
+
+                </form>
+            </div>
+        </div>
+        <script type='text/javascript' src='js/login.js'></script>
+    </body>
+</html>
