@@ -12,9 +12,9 @@ const app = express();
 
 // Set View Engine
 const hbs = exphbs.create({
-    defaultLayout: 'main',
-    extname: '.hbs',
-    layoutsDir: join(__dirname, 'views/mainLayout'),
+  defaultLayout: 'main',
+  extname: '.hbs',
+  layoutsDir: join(__dirname, 'views/mainLayout'),
 });
 
 app.engine('hbs', hbs.engine);
@@ -34,5 +34,5 @@ app.use('/teacher', teacherRoutes);
 
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
-    console.log(`JDVNHS Website running on port ${PORT}`);
+  console.log(`JDVNHS Website running on port ${PORT}`);
 });
