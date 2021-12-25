@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
-import exphbs from 'express-handlebars';
+import { engine } from 'express-handlebars';
 import { join } from 'path';
 
 // Routes
@@ -10,19 +10,12 @@ import teacherRoutes from './routes/teacher';
 
 const app = express();
 
-// Set View Engine
-const hbs = exphbs.create({
-  defaultLayout: 'main',
-  extname: '.hbs',
-  layoutsDir: join(__dirname, 'views/mainLayout'),
-});
-
-app.engine('hbs', hbs.engine);
-app.set('views', join(__dirname, 'views'));
-app.set('view engine', 'hbs');
-
 // Serve public folder
 app.use(express.static(join(__dirname, 'public')));
+
+app.engine('.hbs', engine({ extname: '.hbs' }));
+app.set('view engine', 'hbs');
+app.set('views', join(__dirname, 'views'));
 
 // Body Parser
 app.use(express.json());
