@@ -5,7 +5,8 @@
   "main": "index.js",
   "engines": {
     "node": "16.x",
-    "npm": "8.x"
+    "npm": "8.x",
+    "yarn": "1.22.x"
   },
   "scripts": {
     "dev": "ts-node-dev src/app.ts",
