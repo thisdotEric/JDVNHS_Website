@@ -14,8 +14,8 @@
     "start": "node dist/app.js",
     "clean": "rimraf dist/",
     "copy-files": "copyfiles -u 1 src/views/**/*.hbs src/views/*.hbs src/public/**/* src/public/**/**/* dist/",
-    "setup": "npm run clean && npm run build && npm run copy-files",
-    "heroku-postbuild": "npm run setup"
+    "setup": "yarn clean && yarn build && yarn copy-files",
+    "heroku-postbuild": "yarn setup"
   },
   "keywords": [],
   "author": "",
