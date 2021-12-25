@@ -1,4 +1,5 @@
-import 'dotenv/config';
+require('dotenv').config();
+
 import express from 'express';
 import { engine } from 'express-handlebars';
 import { join } from 'path';
