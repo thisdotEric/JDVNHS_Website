@@ -32,7 +32,7 @@ app.use('/', homeRoutes);
 app.use('/student', studentRoutes);
 app.use('/teacher', teacherRoutes);
 
-const PORT = process.env.PORT || 3002;
+const PORT = parseInt(<string>process.env.PORT, 10) || 3002;
 app.listen(PORT, () => {
   console.log(`JDVNHS Website running on port ${PORT}`);
 });
