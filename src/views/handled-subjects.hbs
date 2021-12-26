@@ -1,0 +1,21 @@
+<link rel='stylesheet' href='../css/handled-subjects.css' />
+
+<div class='handled-subjects'>
+  {{#each subjects}}
+    <div class='card'>
+      <table>
+        <tr>
+          <td id='subject-id'>{{{subject_id}}}</td>
+          <td id='subject'>{{{subject}}}</td>
+          <td style='text-align: right;'>Enrolled Students:
+            <span id='student-count'>{{{studentCount}}}</span></td>
+          <td id='view-students'>
+            <a href='{{subject_id}}/students' id='students-link'>View all
+              students
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  {{/each}}
+</div>

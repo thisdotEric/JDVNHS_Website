@@ -6,6 +6,7 @@
   justify-content: space-between;
   align-items: center;
   padding-left: 20px;
+  margin: 10px;
   margin-bottom: 10px;
 }
 
@@ -35,4 +36,24 @@ td {
 
 #subject-id {
   width: 100px;
+}
+
+#view-students {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+#students-link {
+  color: black;
+  background-color: #41bf6b;
+  padding: 7px;
+  border-radius: 10px;
+}
+
+#students-link:hover {
+  background-color: #2dc761;
 }

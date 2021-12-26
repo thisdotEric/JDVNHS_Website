@@ -14,7 +14,15 @@ const app = express();
 // Serve public folder
 app.use(express.static(join(__dirname, 'public')));
 
-app.engine('.hbs', engine({ extname: '.hbs' }));
+app.engine(
+  '.hbs',
+  engine({
+    extname: '.hbs',
+    helpers: {
+      setActive: (isActive: boolean) => (isActive ? 'active' : ''),
+    },
+  })
+);
 app.set('view engine', 'hbs');
 app.set('views', join(__dirname, 'views'));
 

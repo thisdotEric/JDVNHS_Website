@@ -1,5 +1,4 @@
 .side-nav {
-  background-color: inherit;
   height: 100%;
   width: 220px;
   position: fixed;
@@ -12,4 +11,55 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+}
+
+.school-logo {
+  margin-top: 10px;
+}
+
+.links {
+  margin-top: 50px;
+}
+
+.link {
+  margin-bottom: 15px;
+}
+
+.link a {
+  text-decoration: none;
+  color: black;
+}
+
+#active a {
+  display: block;
+  color: white;
+  background-color: #1f2a45;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.user {
+  margin: 20px;
+}
+
+.user p {
+  font-weight: bold;
+  color: black;
+}
+
+#signout {
+  display: block;
+  text-decoration: none;
+  font-weight: lighter;
+  color: white;
+  margin-top: 10px;
+  padding: 5px 5px;
+  text-align: center;
+  background-color: rgb(158, 40, 20);
+  border-radius: 10px;
+}
+
+#signout:hover {
+  background-color: rgb(182, 41, 16);
 }
