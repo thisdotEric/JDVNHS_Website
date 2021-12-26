@@ -1,3 +1,46 @@
+* {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
   font-size: 16px;
+  background-color: #e8eaec;
+  margin-right: 5px;
+}
+
+main {
+  margin-left: 225px;
+  margin-top: 55px;
+}
+
+.header {
+  background: #1f2a45;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: white;
+}
+
+.header p {
+  margin-left: 230px;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.footer {
+  background: #1f2a45;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+}
+
+.footer p {
+  margin-left: 230px;
+  font-size: 14px;
+  padding: 2px 0px;
 }

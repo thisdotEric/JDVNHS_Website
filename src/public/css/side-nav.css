@@ -1,0 +1,15 @@
+.side-nav {
+  background-color: inherit;
+  height: 100%;
+  width: 220px;
+  position: fixed;
+  background-color: #fc7519;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}

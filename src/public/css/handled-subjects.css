@@ -1,0 +1,38 @@
+.card {
+  background-color: #1f2a45;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.subject-info p {
+  display: inline-block;
+}
+
+#subject,
+#student-count {
+  font-weight: bold;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+td {
+  color: white;
+}
+
+#subject-id {
+  width: 100px;
+}

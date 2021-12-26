@@ -1,12 +1,32 @@
 <html lang='en'>
-    <head>
-        <meta charset='UTF-8' />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <meta http-equiv='X-UA-Compatible' content='ie=edge' />
-        <link rel='stylesheet' href='../css/main.css' />
-        <title> {{{title}}} </title>
-    </head>
-    <body>
-        {{{body}}}
-    </body>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=1024' />
+    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+    <link rel='stylesheet' href='../css/main.css' />
+    <link rel='stylesheet' href='../css/side-nav.css' />
+
+    <title> {{{title}}} </title>
+  </head>
+  <body>
+
+    {{#unless login}}
+      <div class='side-nav'>
+        <p>side bar</p>
+      </div>
+    {{/unless}}
+
+    <div class='header'>
+      <p>{{{header}}}</p>
+    </div>
+
+    <main>
+      {{{body}}}
+    </main>
+
+    {{! <div class='footer'>
+      <p>Jose de Villa National High School </p>
+    </div> }}
+
+  </body>
 </html>

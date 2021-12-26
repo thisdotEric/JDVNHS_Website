@@ -3,6 +3,7 @@ import { Request, Response } from 'express';
 class HomeController {
   async index(req: Request, res: Response) {
     res.render('login', {
+      login: true,
       title: 'JDVNHS Login',
     });
   }
