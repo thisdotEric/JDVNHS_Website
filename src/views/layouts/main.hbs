@@ -3,8 +3,10 @@
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=1024' />
     <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+    <link rel='icon' type='image/png' href='/img/favicon.png' />
     <link rel='stylesheet' href='/css/main.css' />
     <link rel='stylesheet' href='/css/side-nav.css' />
+    <script src='/js/setAPI.js'></script>
 
     <title> {{{title}}} </title>
   </head>
@@ -21,6 +23,15 @@
             alt=''
           />
 
+          <div id='select-subject'>
+            <a href='/teacher/dashboard'>Select Subject</a>
+            <hr />
+            <p><span id='selected-label'>Selected:
+              </span>
+              {{selectedSubject}}</p>
+
+          </div>
+
           <div class='links'>
 
             {{#each links}}
@@ -33,14 +44,19 @@
         </div>
 
         <div class='user'>
-          <p>John Eric Siguenza</p>
-          <a id='signout' href='/'>Sign out</a>
+          <p>Koloda Mikhaylov Novikov</p>
+
+          <form action='/logout' method='POST'>
+            <input id='signout' type='submit' value='Signout' />
+          </form>
 
         </div>
       </div>
 
       <div class='header'>
         <p>{{{header}}}</p>
+
+        <p id='err'>{{{error}}}</p>
 
       </div>
 
@@ -51,4 +67,6 @@
     </main>
 
   </body>
+  <script src='/js/close-error.js'></script>
+
 </html>

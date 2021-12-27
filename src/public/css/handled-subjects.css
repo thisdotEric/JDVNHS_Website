@@ -47,13 +47,16 @@ a {
   display: inline-block;
 }
 
-#students-link {
+.card input {
   color: black;
   background-color: #41bf6b;
-  padding: 7px;
+  padding: 10px;
   border-radius: 10px;
+  margin-left: 100px;
+  border: none;
+  font-weight: bold;
 }
 
-#students-link:hover {
+.card input:hover {
   background-color: #2dc761;
 }

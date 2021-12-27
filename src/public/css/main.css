@@ -22,6 +22,20 @@ main {
   top: 0;
   width: 100%;
   color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#err {
+  cursor: pointer;
+  background-color: rgb(175, 64, 45);
+  margin-right: 20px;
+  padding: 10px;
+}
+
+.hide {
+  display: none;
 }
 
 .header p {
@@ -43,4 +57,11 @@ main {
   margin-left: 230px;
   font-size: 14px;
   padding: 2px 0px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: rgb(121, 121, 121);
+  margin: 10px 0px;
 }

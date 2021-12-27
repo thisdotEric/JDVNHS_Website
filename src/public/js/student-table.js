@@ -1,8 +1,11 @@
+const API = localStorage.getItem('API');
+
+const currentSubject = document.getElementById('currentSubject').value;
+
 new gridjs.Grid({
   columns: ['LRN', 'First Name', 'Middle Name', 'Last Name'],
   server: {
-    url: 'https://jdvnhs-webapi.herokuapp.com/v1/subject/PreCal/students',
-    // url: 'http://localhost:4000/v1/subject/PreCal/students',
+    url: `${API}subject/${currentSubject}/students`,
     then: students =>
       students.data.map(student => [
         student.user_id,
@@ -17,4 +20,5 @@ new gridjs.Grid({
     limit: 10,
     summary: true,
   },
+  search: true,
 }).render(document.getElementById('table'));

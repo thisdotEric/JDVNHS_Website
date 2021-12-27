@@ -30,6 +30,35 @@
   color: black;
 }
 
+#select-subject {
+  margin-top: 20px;
+  display: block;
+  color: white;
+  background-color: #1f2a45;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#select-subject:hover {
+  background-color: #333f5f;
+}
+
+#select-subject a {
+  text-decoration: none;
+  display: block;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#selected-label {
+  font-weight: lighter;
+  font-size: 12px;
+  font-style: italic;
+}
+
 #active a {
   display: block;
   color: white;
@@ -41,20 +70,25 @@
 
 .user {
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .user p {
   font-weight: bold;
   color: black;
+  text-align: center;
 }
 
 #signout {
   display: block;
-  text-decoration: none;
-  font-weight: lighter;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
   color: white;
   margin-top: 10px;
-  padding: 5px 5px;
   text-align: center;
   background-color: rgb(158, 40, 20);
   border-radius: 10px;
