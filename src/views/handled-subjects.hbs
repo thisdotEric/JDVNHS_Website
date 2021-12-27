@@ -2,20 +2,20 @@
 
 <div class='handled-subjects'>
   {{#each subjects}}
-    <div class='card'>
-      <table>
-        <tr>
-          <td id='subject-id'>{{{subject_id}}}</td>
-          <td id='subject'>{{{subject}}}</td>
-          <td style='text-align: right;'>Enrolled Students:
-            <span id='student-count'>{{{studentCount}}}</span></td>
-          <td id='view-students'>
-            <a href='{{subject_id}}/students' id='students-link'>View all
-              students
-            </a>
-          </td>
-        </tr>
-      </table>
-    </div>
+    <form action='select-subject?subjectId={{{subject_id}}}' method='POST'>
+      <div class='card'>
+        <table>
+          <tr>
+            <td id='subject-id'>{{{subject_id}}}</td>
+            <td id='subject'>{{{subject_name}}}</td>
+            <td style='text-align: left'>Enrolled Students:
+              <span id='student-count'>{{{count}}}</span></td>
+            <td>
+              <input type='submit' value='Select Subject' />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </form>
   {{/each}}
 </div>
