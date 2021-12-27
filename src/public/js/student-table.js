@@ -20,4 +20,5 @@ new gridjs.Grid({
     limit: 10,
     summary: true,
   },
+  search: true,
 }).render(document.getElementById('table'));
