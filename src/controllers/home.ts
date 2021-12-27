@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import e, { NextFunction, Request, Response } from 'express';
 
 class HomeController {
   async index(req: Request, res: Response) {
@@ -18,6 +18,14 @@ class HomeController {
     } else {
       res.redirect('teacher/dashboard');
     }
+  }
+
+  async postLogout(req: Request, res: Response, next: NextFunction) {
+    req.session.destroy(err => {
+      if (err) return next(err);
+
+      res.redirect('/');
+    });
   }
 }
 
