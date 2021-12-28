@@ -1,12 +1,16 @@
 import session from 'express-session';
 
 declare module 'express-session' {
-  interface Teacher {
-    teacherId: string;
+  interface User {
+    userType: 'student' | 'teacher';
+    userID: string;
+    firstName: string;
+    middleName: string;
+    lastName: string;
   }
 
   export interface SessionData {
-    teacher: Teacher;
+    user: User;
     currentSubject: string;
     error: string;
   }

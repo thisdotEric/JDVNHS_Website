@@ -1,4 +1,4 @@
-import e, { NextFunction, Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 
 class HomeController {
   async index(req: Request, res: Response) {
@@ -10,7 +10,6 @@ class HomeController {
 
   async postLogin(req: Request, res: Response) {
     const { password, user_id } = req.body;
-
     let isStudent = false;
 
     if (isStudent) {
