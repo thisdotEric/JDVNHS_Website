@@ -2,12 +2,9 @@ const API = localStorage.getItem('API');
 const currentSubject = document.getElementById('currentSubject').value;
 
 async function removeStudentFromClass(LRN) {
-  const res = await fetch(
-    `http://localhost:4000/v1/subject/${currentSubject}/students/${LRN}`,
-    {
-      method: 'DELETE',
-    }
-  );
+  const res = await fetch(`${API}subject/${currentSubject}/students/${LRN}`, {
+    method: 'DELETE',
+  });
   const jsonData = await res.json();
 
   location.reload();
