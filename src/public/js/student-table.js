@@ -22,8 +22,6 @@ const grid = new gridjs.Grid({
         return gridjs.h(
           'button',
           {
-            className:
-              'py-2 mb-4 px-4 border rounded-md text-white bg-blue-600',
             onClick: async () => {
               curr = `${row.cells[0].data}`;
               await removeStudentFromClass(`${row.cells[0].data}`);
