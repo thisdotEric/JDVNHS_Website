@@ -1,4 +1,5 @@
 const API = localStorage.getItem('API');
+const localhost = localStorage.getItem('localhost');
 const currentSubject = document.getElementById('currentSubject').value;
 
 async function removeStudentFromClass(LRN) {
@@ -28,6 +29,22 @@ const grid = new gridjs.Grid({
             },
           },
           'Remove from class'
+        );
+      },
+    },
+    {
+      name: 'Action',
+      formatter: (cell, row) => {
+        return gridjs.h(
+          'button',
+          {
+            onClick: async () => {
+              curr = `${row.cells[0].data}`;
+              console.log(curr);
+              window.location.href = `${localhost}student/${curr}`;
+            },
+          },
+          'View Student Profile'
         );
       },
     },

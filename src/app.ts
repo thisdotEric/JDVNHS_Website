@@ -44,6 +44,8 @@ app.engine(
     helpers: {
       setActive: (isActive: boolean) => (isActive ? 'active' : ''),
       checkError: (err: string) => (err === '' ? false : true),
+      removeTime: (date: string) => date.substring(0, 10),
+      randomizePicture: () => Math.floor(Math.random() * (99 - 1) + 1),
     },
   })
 );

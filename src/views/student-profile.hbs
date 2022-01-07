@@ -1,0 +1,43 @@
+<link rel='stylesheet' href='/css/student-profile.css' />
+
+<div class='profile'>
+
+  <div class='student-info'>
+    <img
+      src='https://randomuser.me/api/portraits/med/women/{{randomizePicture}}.jpg'
+      alt='Image'
+      srcset=''
+      id='picture'
+      width='120px'
+      height='120px'
+    />
+    <p class='info'>{{{fullname}}}</p>
+
+    <div class='grid'>
+      {{#each student}}
+        <div class='cell'>
+
+          <table>
+            <tbody>
+              <tr>
+                <td style='width: 100px;'>
+                  <p class='label'>{{@key}}</p>
+                </td>
+                <td>
+                  <p class='info'> {{this}}</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      {{/each}}
+    </div>
+
+  </div>
+
+  <div class='subjects'>
+
+    <p>Object Oriented Programming</p>
+
+  </div>
+</div>

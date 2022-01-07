@@ -1,0 +1,50 @@
+.profile {
+}
+
+.highlight {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.cell {
+  flex: 0 0 32%;
+  height: 50px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgb(179, 181, 179);
+}
+
+.label {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 13px;
+}
+
+.info {
+  font-weight: bold;
+}
+
+.student-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(224, 225, 224);
+  padding: 10px;
+}
+
+#picture {
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: green 3px solid;
+}
