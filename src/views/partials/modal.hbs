@@ -1,0 +1,53 @@
+<link
+  rel='stylesheet'
+  href='https://unpkg.com/animate.css/animate.css'
+  type='text/css'
+/>
+
+<link
+  rel='stylesheet'
+  href='https://unpkg.com/rmodal/dist/rmodal.css'
+  type='text/css'
+/>
+<link rel='stylesheet' href='/css/modal.css' type='text/css' />
+<script
+  type='text/javascript'
+  src='https://unpkg.com/rmodal/dist/rmodal.js'
+></script>
+
+<script src='/js/modal.js'></script>
+
+<div id='modal' class='modal'>
+  <div class='modal-dialog animate__animated'>
+    <div class='modal-content'>
+      <form class='form-horizontal' action='attendance' method='get'>
+
+        <div class='modal-body'>
+          <div class='form-group'>
+
+            <button
+              class='btn'
+              type='button'
+              onclick='localStorage.setItem("action", "Add"); modal.close();'
+            >Add New Attendance</button>
+            <button
+              class='btn'
+              type='button'
+              onclick='localStorage.setItem("action", "Update"); modal.close();'
+            >Update Attendance</button>
+            <button
+              class='btn'
+              type='button'
+              onclick='localStorage.setItem("action", "View"); modal.close();'
+            >View Attendance</button>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style type='text/css'>
+  .modal .modal-dialog { width: 400px; }
+</style>

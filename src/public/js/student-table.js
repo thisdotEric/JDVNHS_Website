@@ -25,10 +25,11 @@ const grid = new gridjs.Grid({
           {
             onClick: async () => {
               curr = `${row.cells[0].data}`;
-              await removeStudentFromClass(`${row.cells[0].data}`);
+              console.log(curr);
+              window.location.href = `${localhost}student/${curr}`;
             },
           },
-          'Remove from class'
+          'View Student Profile'
         );
       },
     },
@@ -40,11 +41,10 @@ const grid = new gridjs.Grid({
           {
             onClick: async () => {
               curr = `${row.cells[0].data}`;
-              console.log(curr);
-              window.location.href = `${localhost}student/${curr}`;
+              await removeStudentFromClass(`${row.cells[0].data}`);
             },
           },
-          'View Student Profile'
+          'Remove from class'
         );
       },
     },

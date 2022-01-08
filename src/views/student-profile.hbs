@@ -11,8 +11,6 @@
       width='120px'
       height='120px'
     />
-    <p class='info'>{{{fullname}}}</p>
-
     <div class='grid'>
       {{#each student}}
         <div class='cell'>
@@ -37,7 +35,24 @@
 
   <div class='subjects'>
 
-    <p>Object Oriented Programming</p>
+    <p>List of Enrolled subjects</p>
+    <table class='table'>
+      <thead>
+        <tr>
+          <td class='table'>Subject Id</td>
+          <td class='table'>Subject Name</td>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each subjects}}
+          <tr>
+            <td class='table info'>{{subject_id}}</td>
+            <td class='table info'>{{subject_name}}</td>
+          </tr>
+        {{/each}}
+
+      </tbody>
+    </table>
 
   </div>
 </div>

@@ -1,6 +1,13 @@
 .profile {
 }
 
+.table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+  padding-right: 50px;
+}
+
 .highlight {
   font-weight: bold;
   font-size: 16px;
@@ -47,4 +54,19 @@
   border-radius: 50%;
   margin-bottom: 10px;
   border: green 3px solid;
+}
+
+.name {
+  background-color: rgb(179, 181, 179);
+  padding: 10px;
+}
+
+.subjects {
+  margin-left: 80px;
+  margin-top: 20px;
+}
+
+.subjects p {
+  font-weight: bold;
+  padding: 10px;
 }

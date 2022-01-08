@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-import express from 'express';
+import express, { Response } from 'express';
 import { engine } from 'express-handlebars';
 import { join } from 'path';
 import bodyParser from 'body-parser';
@@ -41,10 +41,10 @@ app.engine(
   '.hbs',
   engine({
     extname: '.hbs',
+    partialsDir: join(__dirname, './views/partials'),
     helpers: {
       setActive: (isActive: boolean) => (isActive ? 'active' : ''),
       checkError: (err: string) => (err === '' ? false : true),
-      removeTime: (date: string) => date.substring(0, 10),
       randomizePicture: () => Math.floor(Math.random() * (99 - 1) + 1),
     },
   })
@@ -56,6 +56,12 @@ app.set('views', join(__dirname, 'views'));
 app.use('/', homeRoutes);
 app.use('/student', studentRoutes);
 app.use('/teacher', teacherRoutes);
+
+app.use((_, res: Response, _next) => {
+  res.render('404', {
+    error404: true,
+  });
+});
 
 const PORT = parseInt(<string>process.env.PORT, 10) || 3002;
 app.listen(PORT, () => {

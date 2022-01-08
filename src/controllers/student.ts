@@ -3,7 +3,7 @@ import apiFetch from '../utils/api-fetch';
 
 class StudentController {
   async studentDashboard(req: Request, res: Response) {
-    res.render('student-dashboard', {
+    res.render('modal', {
       title: 'Student Dashboard',
     });
   }
@@ -12,21 +12,20 @@ class StudentController {
     const LRN = req.params.lrn;
 
     const student = await apiFetch(`student/${LRN}`);
-
-    const fullname = `${student.data.data.first_name} ${student.data.data.middle_name} ${student.data.data.last_name}`;
+    const enrolledSubjects = await apiFetch(`student/${LRN}/subjects`);
 
     res.render('student-profile', {
       title: 'Student Profile',
-      fullname,
       student: {
+        Fullname: `${student.data.data.first_name} ${student.data.data.middle_name} ${student.data.data.last_name}`,
         LRN: student.data.data.user_id,
         Gender: student.data.data.gender,
         Contact: student.data.data.contact_number,
-        'Birth Date': student.data.data.birth_date,
-        Address: student.data.data.address,
+        'Birth Date': student.data.data.birth_date.substring(0, 10),
         'Grade Level': student.data.data.grade_level,
       },
       header: 'Student Profile',
+      subjects: enrolledSubjects.data.data,
     });
   }
 }

@@ -73,6 +73,7 @@ class TeacherController {
       title: 'Attendance',
       header: `Attendance`,
       links,
+      selectedSubject: req.session.currentSubject,
     });
   }
 
