@@ -1,8 +1,6 @@
 const API = localStorage.getItem('API');
 const currentSubject = document.getElementById('currentSubject').value;
 
-console.log(currentSubject);
-
 function concatNames(firstname, middlename, lastname) {
   return lastname + ', ' + firstname + ' ' + middlename;
 }
@@ -25,20 +23,19 @@ function createActionColumn(attendanceStatus, actionName) {
 }
 
 async function updateAttendance(newStatus, LRN) {
-  const lecture_id = 1;
-
-  await fetch(`${API}subject/${currentSubject}/${lecture_id}/attendance`, {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      newStatus,
-      LRN,
-    }),
-  });
-  location.reload();
+  //   const lecture_id = 1;
+  //   await fetch(`${API}subject/${currentSubject}/${lecture_id}/attendance`, {
+  //     method: 'POST',
+  //     headers: {
+  //       Accept: 'application/json',
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({
+  //       newStatus,
+  //       LRN,
+  //     }),
+  //   });
+  //   location.reload();
 }
 
 let UpdateAttendance = {
@@ -50,15 +47,16 @@ let UpdateAttendance = {
     createActionColumn('absent', 'Absent'),
     createActionColumn('excused', 'Excused'),
   ],
-  server: {
-    url: `${API}subject/${currentSubject}/1/attendance`,
-    then: attendance =>
-      attendance.data.map(card => [
-        card.LRN,
-        concatNames(card.first_name, card.middle_name, card.last_name),
-        card.status,
-      ]),
-  },
+  // server: {
+  //   url: `${API}subject/${currentSubject}/1/attendance`,
+  //   then: attendance =>
+  //     attendance.data.map(card => [
+  //       card.LRN,
+  //       concatNames(card.first_name, card.middle_name, card.last_name),
+  //       card.status,
+  //     ]),
+  // },
+  data: [['12', 'John Eric', 'present']],
   pagination: {
     enabled: true,
     limit: 9,

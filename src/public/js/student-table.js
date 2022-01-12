@@ -67,4 +67,9 @@ const grid = new gridjs.Grid({
     summary: true,
   },
   search: true,
+  style: {
+    table: {
+      'font-size': '14px',
+    },
+  },
 }).render(document.getElementById('table'));

@@ -69,12 +69,45 @@ class TeacherController {
   async viewAttendance(req: Request, res: Response) {
     setSelected('Attendance');
 
+    res.render('view-classAttendance', {
+      title: 'Attendance',
+      header: `Attendance`,
+      links,
+      selectedSubject: req.session.currentSubject,
+    });
+  }
+
+  async updateAtendance(req: Request, res: Response) {
+    setSelected('Attendance');
+
     res.render('attendance', {
       title: 'Attendance',
       header: `Attendance`,
       links,
       selectedSubject: req.session.currentSubject,
     });
+  }
+
+  async addAttendance(req: Request, res: Response) {
+    setSelected('Attendance');
+
+    const studentsList = await apiFetch('subject/PreCal/students');
+
+    console.log(studentsList.data.data);
+
+    res.render('add-classAttendance', {
+      title: 'Attendance',
+      header: `Attendance`,
+      links,
+      selectedSubject: req.session.currentSubject,
+      students: studentsList.data.data,
+    });
+  }
+
+  async postAddAttendance(req: Request, res: Response) {
+    console.log(req.body);
+
+    res.send('Added');
   }
 
   async selectSubject(req: Request, res: Response) {

@@ -1,0 +1,23 @@
+<link rel='stylesheet' href='/css/update-attendance.css' />
+
+<div class='attendace'>
+
+  <div id='attendance-table'></div>
+  <input
+    type='text'
+    name=''
+    id='currentSubject'
+    value='{{{selectedSubject}}}'
+    hidden
+  />
+
+  <form action='attendance/update'>
+    <input type='submit' value='Update attendance' />
+  </form>
+
+  <form action='attendance/add'>
+    <input type='submit' value='Add new attendance' />
+  </form>
+
+  <script src='/js/view-classAttendance.js'></script>
+</div>

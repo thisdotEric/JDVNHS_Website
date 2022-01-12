@@ -1,0 +1,48 @@
+<link rel='stylesheet' href='/css/add-attendance.css' />
+
+<div class='attendace'>
+
+  <form action='add' method='POST'>
+
+    <input type='date' name='lecture-date' id='' />
+
+    {{#each students}}
+      <div class='input-attendance'>
+        <p>{{{last_name}}}, {{{first_name}}} {{{middle_name}}}</p>
+
+        <label for='present'>Present</label>
+        <input
+          type='radio'
+          id='present'
+          onclick='setStatus("absent", "{{{user_id}}}")'
+        />
+
+        <label for='absent'>Absent</label>
+        <input
+          type='radio'
+          id='absent'
+          onclick='setStatus("absent", "{{{user_id}}}")'
+        />
+
+        <label for='Excused'>Excused</label>
+        <input
+          type='radio'
+          id='excused'
+          onclick='setStatus("excused", "{{{user_id}}}")'
+        />
+
+        <input type='hidden' name='{{{user_id}}}' id='{{{user_id}}}-status' />
+      </div>
+
+    {{/each}}
+
+    <input type='submit' value='Save Attendance' />
+  </form>
+
+</div>
+
+<script>
+  function setStatus(id, hiddenInputID) {
+  document.getElementById(`${hiddenInputID}-status`).value = id }
+
+</script>

@@ -1,0 +1,11 @@
+#update-attendance {
+  text-decoration: none;
+  padding: 20px;
+  background-color: cadetblue;
+  margin-left: 20px;
+  text-align: center;
+}
+
+#attendance-table {
+  margin-bottom: 50px;
+}
