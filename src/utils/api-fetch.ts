@@ -8,10 +8,12 @@ const instance = axios.create({
 
 export default async function apiFetch(
   endpoint: string,
-  method: METHOD = 'GET'
+  method: METHOD = 'GET',
+  data?: any
 ) {
   return instance({
     url: endpoint,
     method,
+    data,
   });
 }
