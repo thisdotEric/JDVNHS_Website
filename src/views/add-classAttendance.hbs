@@ -4,7 +4,7 @@
 
   <form action='add' method='POST'>
 
-    <input type='date' name='lecture-date' id='' />
+    <input type='date' name='lecture_date' id='' />
 
     {{#each students}}
       <div class='input-attendance'>
@@ -15,12 +15,14 @@
           type='radio'
           id='present'
           onclick='setStatus("absent", "{{{user_id}}}")'
+          name='{{{user_id}}}'
         />
 
         <label for='absent'>Absent</label>
         <input
           type='radio'
           id='absent'
+          name='{{{user_id}}}'
           onclick='setStatus("absent", "{{{user_id}}}")'
         />
 
@@ -28,6 +30,7 @@
         <input
           type='radio'
           id='excused'
+          name='{{{user_id}}}'
           onclick='setStatus("excused", "{{{user_id}}}")'
         />
 

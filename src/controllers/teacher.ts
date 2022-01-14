@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import apiFetch from '../utils/api-fetch';
 import links from '../constants/sidenav-link';
+import axios from 'axios';
 
 function setSelected(currentTab: string) {
   links.map(item => {
@@ -80,7 +81,7 @@ class TeacherController {
   async updateAtendance(req: Request, res: Response) {
     setSelected('Attendance');
 
-    res.render('attendance', {
+    res.render('update-attendance', {
       title: 'Attendance',
       header: `Attendance`,
       links,
@@ -91,9 +92,9 @@ class TeacherController {
   async addAttendance(req: Request, res: Response) {
     setSelected('Attendance');
 
-    const studentsList = await apiFetch('subject/PreCal/students');
-
-    console.log(studentsList.data.data);
+    const studentsList = await apiFetch(
+      `subject/${req.session.currentSubject}/students`
+    );
 
     res.render('add-classAttendance', {
       title: 'Attendance',
@@ -105,9 +106,38 @@ class TeacherController {
   }
 
   async postAddAttendance(req: Request, res: Response) {
-    console.log(req.body);
+    const attendanceForm = req.body;
+    const lecture_id = 2;
 
-    res.send('Added');
+    const lectureAttendance = [];
+
+    let lecture_date_index = 0;
+    for (var key in attendanceForm) {
+      if (lecture_date_index == 0) {
+        lecture_date_index++;
+        continue;
+      }
+
+      lectureAttendance.push({
+        LRN: key,
+        lecture_id,
+        status: attendanceForm[key][1],
+      });
+    }
+
+    await axios.post(
+      `${process.env.JDVNHS_API}/subject/PreCal/attendance`,
+      {
+        attendance: lectureAttendance,
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+
+    res.status(200).send(2);
   }
 
   async selectSubject(req: Request, res: Response) {
